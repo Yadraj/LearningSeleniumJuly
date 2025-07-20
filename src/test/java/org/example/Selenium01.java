@@ -3,6 +3,7 @@ package org.example;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Selenium01 {
@@ -16,6 +17,8 @@ public class Selenium01 {
 
         WebDriver driver = new ChromeDriver(chromeOptions);
         driver.get("https://www.google.com/");
+        Assert.assertEquals(driver.getTitle(),"Google");
+        Assert.assertEquals(driver.getCurrentUrl(),"https://www.google.com/");
         driver.quit();
 
 
