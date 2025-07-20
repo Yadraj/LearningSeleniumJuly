@@ -16,9 +16,10 @@ public class Selenium01 {
         chromeOptions.addArguments("--incognito-mode");
 
         WebDriver driver = new ChromeDriver(chromeOptions);
-        driver.get("https://www.google.com/");
-        Assert.assertEquals(driver.getTitle(),"Google");
-        Assert.assertEquals(driver.getCurrentUrl(),"https://www.google.com/");
+        driver.get("https://katalon-demo-cura.herokuapp.com/");
+        String text = "CURA Healthcare Service";
+        String source = driver.getPageSource();
+        Assert.assertTrue(source.contains(text));
         driver.quit();
 
 
