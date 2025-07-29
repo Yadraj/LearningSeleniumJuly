@@ -2,9 +2,14 @@ package org.example;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class Oct19th {
 
@@ -16,9 +21,12 @@ public class Oct19th {
         driver.findElement(By.id("login-username")).sendKeys("yadraj@gmail.com");
         driver.findElement(By.id("login-password")).sendKeys("123");
         driver.findElement(By.id("js-login-btn")).click();
-        Thread.sleep(2000);
-        String text = driver.findElement(By.id("js-notification-box-msg")).getText();
-        Assert.assertEquals(text,"Your email, password, IP address or location did not match");
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+        WebElement text = driver.findElement(By.id("js-notification-box-msg"));
+        wait.until(ExpectedConditions.visibilityOf(text));
+        String text1 =text.getText();
+        Assert.assertEquals(text1,"Your email, password, IP address or location did not match");
         driver.quit();
 
     }
