@@ -28,7 +28,10 @@ public class Oct27thSVG {
         List<WebElement> svgList =driver.findElements(By.xpath("//*[name()='svg']"));
         svgList.get(0).click();
         Thread.sleep(3000);
-
+        List<WebElement> productList= driver.findElements(By.xpath("(//div[@class='cPHDOP col-12-12'])[2]/div/div/div/a[2]"));
+        for(WebElement list : productList){
+            System.out.println(list.getText());
+        }
 
     }
 
