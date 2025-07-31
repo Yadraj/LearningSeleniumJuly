@@ -1,5 +1,6 @@
 package org.example;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,7 +16,8 @@ public class Oct26th {
         driver.get("https://the-internet.herokuapp.com/javascript_alerts");
         driver.findElement(By.xpath("//button[text()='Click for JS Alert']")).click();
         Thread.sleep(3000);
-        driver.switchTo().alert().accept();
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
         String text = driver.findElement(By.xpath("//p[@id='result']")).getText();
         Assert.assertEquals(text,"You successfully clicked an alert");
 
