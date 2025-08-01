@@ -14,9 +14,13 @@ public class Oct27thJSExecutor {
 
         WebDriver driver = new ChromeDriver();
         driver.get("https://selectorshub.com/xpath-practice-page/");
+        Thread.sleep(5000);
         JavascriptExecutor js = (JavascriptExecutor)driver;
         WebElement scroll =driver.findElement(By.xpath("//div[@id='userName']"));
         js.executeScript("arguments[0].scrollIntoView(true)",scroll);
+
+        WebElement ele = (WebElement) js.executeScript("return document.querySelector(\"#userName\").shadowRoot.querySelector(\"#app2\").shadowRoot.querySelector(\"#pizza\");");
+        ele.sendKeys("helo");
         Thread.sleep(2000);
         driver.quit();
     }
