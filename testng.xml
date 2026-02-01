@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/Lenovo/IdeaProjects/LearningSeleniumJuly">
+        <groups>
+
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="org.example.PartialSS"></class>
+            <class name="org.example.ScreenshotDemo"></class>
+
+</classes>
+    </test>
+</suite>
