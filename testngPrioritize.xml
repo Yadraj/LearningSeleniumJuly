@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="car loan">
+
+    <test verbose="2" preserve-order="true" name="carloan">
+
+
+        <classes>
+
+            <class name="org.example.TestNG.TestNG3"/>
+
+        </classes>
+
+    </test>
+
+</suite>
