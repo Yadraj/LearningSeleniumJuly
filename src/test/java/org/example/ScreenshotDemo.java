@@ -14,7 +14,7 @@ import java.io.IOException;
 
 public class ScreenshotDemo {
 
-    @Test
+    @Test(groups = {"smoke"})
     public void ss() throws IOException {
 
         WebDriver driver = new ChromeDriver();
